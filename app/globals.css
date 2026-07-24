@@ -24,9 +24,9 @@
   --good:       #3E7050;  /* healthy fix dot                 */
   --paper:      #F5F7F2;  /* text-on-ink                     */
 
-  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
-  --sans:  'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --mono:  'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+  --serif: var(--font-serif), Georgia, 'Times New Roman', serif;
+  --sans:  var(--font-sans), system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono:  var(--font-mono), ui-monospace, Menlo, Consolas, monospace;
 
   --chip-edge:  #D3DCD1;  /* chip / ghost button border      */
   --pill-edge:  #BFD4DC;  /* format pill border              */
@@ -103,7 +103,6 @@ a:hover { color: var(--link-hi); text-decoration: underline; }
   position: relative;
   display: flex;
   flex-direction: column;
-  touch-action: pan-x;
 }
 
 /* On roomier viewports the card floats on the field, like the mock. */
