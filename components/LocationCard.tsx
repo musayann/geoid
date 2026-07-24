@@ -12,7 +12,6 @@ import {
   shareText,
   splitUncertain,
 } from '@/lib/format';
-import { usePullToRefresh } from '@/lib/hooks/usePullToRefresh';
 import Topbar from './Topbar';
 
 interface Props {
@@ -30,7 +29,7 @@ interface Props {
 
    Hero place, admin ladder, coordinates (tap to switch DD/DMS),
    altitude and share/copy actions. Offline drops the interactive
-   affordances (pull-to-refresh, tap-to-copy, share) and shows a
+   affordances (tap-to-copy, share) and shows a
    cached banner + retry instead.
    ============================================================ */
 export default function LocationCard({
@@ -43,7 +42,6 @@ export default function LocationCard({
   copy,
 }: Props) {
   const offline = phase === 'offline';
-  const { sheetRef, hintRef, handlers } = usePullToRefresh(onRefresh, !offline);
 
   /* ---- actions -------------------------------------------- */
   const share = useCallback(async () => {
@@ -103,12 +101,7 @@ export default function LocationCard({
           <span>last fix {relTime(fix.updatedAt)}</span>
         </div>
       )}
-      {!offline && (
-        <div className="pull-hint" ref={hintRef}>
-          PULL TO REFRESH
-        </div>
-      )}
-      <div className="sheet enter" ref={sheetRef} {...handlers}>
+      <div className="sheet enter">
         <Topbar phase={phase} fix={fix} cached={cached} />
 
         {/* hero — nearest place */}
