@@ -10,7 +10,7 @@ share the whole thing in one tap.
 
 Built from the design [`Where Am I.dc.html`](https://claude.ai/design/p/28d132b9-1055-43e7-9dee-97faee5947ea).
 
-![icon](public/icon.svg)
+![icon](app/icon.svg)
 
 ## What it does
 
@@ -83,7 +83,7 @@ routes need a server runtime, so this is not a static export.
 | `lib/geo.ts` | client wrappers over the API routes |
 | `lib/types.ts` | shared types |
 | `public/sw.js` | service worker — runtime-caches the app shell for offline use |
-| `public/icon*.svg` | PWA / favicon icons |
+| `app/icon.svg` | favicon (Next.js metadata icon convention) |
 
 ## License
 
