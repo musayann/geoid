@@ -50,7 +50,7 @@ export default function LocationCard({
     const text = shareText(fix, fmt);
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'Where Am I', text });
+        await navigator.share({ title: 'Hano', text });
         return;
       } catch (e) {
         if ((e as Error)?.name === 'AbortError') return;

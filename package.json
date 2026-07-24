@@ -1,8 +1,8 @@
 {
-  "name": "geoid",
+  "name": "hano",
   "version": "1.0.0",
   "private": true,
-  "description": "Where Am I — one glanceable card that tells you exactly where you are.",
+  "description": "Hano — one glanceable card that tells you exactly where you are.",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Where Am I',
+  title: 'Hano - Where am I?',
   description: 'One glanceable card that tells you exactly where you are.',
 };
 
