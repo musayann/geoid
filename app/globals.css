@@ -1,69 +1,70 @@
 /* ============================================================
    Where Am I — design tokens (from "Where Am I.dc.html")
    ============================================================ */
+/* Light = "Topo Sage" · Dark = "Night Contour" (from the Claude Design doc). */
 :root {
-  --field:      #E3DDCB;  /* page / warm cream field         */
-  --card:       #F8F4E9;  /* card surface                    */
-  --card-edge:  #CFC7AE;  /* card border                     */
-  --ink:        #29271F;  /* primary text                    */
-  --ink-2:      #524E40;  /* secondary text                  */
-  --muted:      #75705E;  /* muted text                      */
-  --faint:      #A39D8A;  /* label text                      */
-  --hair:       #E2DBC6;  /* thin dividers                   */
-  --tick:       #C9C0A6;  /* ruler ticks / tree glyphs       */
-  --fill:       #F1EBD8;  /* inset button / hover fill       */
-  --fill-2:     #E9E2CB;  /* inset button hover              */
-  --accent:     #A64B2A;  /* terracotta accent               */
-  --link:       #3E6A78;  /* teal link                       */
-  --link-hi:    #2C4F5B;
-  --warn:       #B08A2E;  /* signal gold                     */
-  --warn-ink:   #7A5B22;  /* warning text                    */
-  --warn-fill:  #F5EDD5;  /* warning surface                 */
-  --warn-edge:  #E0CDA0;  /* warning border                  */
-  --good:       #58684A;  /* healthy fix dot                 */
-  --paper:      #F8F4E9;  /* text-on-ink                     */
+  --field:      #D5DCD3;  /* page / sage field               */
+  --card:       #F5F7F2;  /* card surface                    */
+  --card-edge:  #C2CDC2;  /* card border                     */
+  --ink:        #1E2A26;  /* primary text                    */
+  --ink-2:      #47554E;  /* secondary text                  */
+  --muted:      #5E6B64;  /* muted text                      */
+  --faint:      #8B978F;  /* label text                      */
+  --hair:       #DEE5DB;  /* thin dividers                   */
+  --tick:       #BBC7BC;  /* ruler ticks / tree glyphs       */
+  --fill:       #E9EEE6;  /* inset button / hover fill       */
+  --fill-2:     #DFE6DC;  /* inset button hover              */
+  --accent:     #1F6E8C;  /* teal accent                     */
+  --link:       #1F6E8C;  /* link                            */
+  --link-hi:    #17566E;
+  --warn:       #9C7C2C;  /* signal gold                     */
+  --warn-ink:   #6E5B1F;  /* warning text                    */
+  --warn-fill:  #F4EFDA;  /* warning surface                 */
+  --warn-edge:  #D6C68F;  /* warning border                  */
+  --good:       #3E7050;  /* healthy fix dot                 */
+  --paper:      #F5F7F2;  /* text-on-ink                     */
 
   --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
   --sans:  'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --mono:  'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
 
-  --chip-edge:  #DDD5BE;  /* chip / ghost button border      */
-  --pill-edge:  #E0C8B8;  /* format pill border              */
-  --ink-hi:     #403D31;  /* primary button hover            */
-  --bar:        #EDE6D0;  /* skeleton bars                   */
-  --banner:     #EFE7CF;  /* offline banner surface          */
-  --banner-edge:#DDD0A8;  /* offline banner border           */
+  --chip-edge:  #D3DCD1;  /* chip / ghost button border      */
+  --pill-edge:  #BFD4DC;  /* format pill border              */
+  --ink-hi:     #33403A;  /* primary button hover            */
+  --bar:        #E6EBE2;  /* skeleton bars                   */
+  --banner:     #EDEAD3;  /* offline banner surface          */
+  --banner-edge:#D8CFA4;  /* offline banner border           */
 }
 
-/* --- dark theme (warm ink, mirrors the cream palette) ----- */
+/* --- dark theme: "Night Contour" -------------------------- */
 :root[data-theme='dark'] {
-  --field:      #17160F;
-  --card:       #201E16;
-  --card-edge:  #38342A;
-  --ink:        #ECE5D2;
-  --ink-2:      #C6BEA8;
-  --muted:      #948B78;
-  --faint:      #6E6857;
-  --hair:       #322E23;
-  --tick:       #4C4735;
-  --fill:       #2A271F;
-  --fill-2:     #343026;
-  --accent:     #CB7B54;
-  --link:       #6FA6B6;
-  --link-hi:    #97C3D0;
-  --warn:       #C9A24A;
-  --warn-ink:   #DCC072;
-  --warn-fill:  #2B2717;
-  --warn-edge:  #4A4126;
-  --good:       #8A9C6E;
-  --paper:      #17160F;
+  --field:      #0E1613;
+  --card:       #16211D;
+  --card-edge:  #2A3833;
+  --ink:        #EAF1EC;
+  --ink-2:      #C0CCC5;
+  --muted:      #93A39B;
+  --faint:      #6E7F76;
+  --hair:       #26332E;
+  --tick:       #3A4A43;
+  --fill:       #22302A;
+  --fill-2:     #2A3A33;
+  --accent:     #6FB6D6;
+  --link:       #6FB6D6;
+  --link-hi:    #97CFE6;
+  --warn:       #C9A94E;
+  --warn-ink:   #D8C283;
+  --warn-fill:  #241F10;
+  --warn-edge:  #4E4425;
+  --good:       #6FA97F;
+  --paper:      #16211D;
 
-  --chip-edge:  #38342A;
-  --pill-edge:  #5A3B2A;
-  --ink-hi:     #D8D1BE;
-  --bar:        #2A271F;
-  --banner:     #2B2717;
-  --banner-edge:#4A4126;
+  --chip-edge:  #263430;
+  --pill-edge:  #2C4B58;
+  --ink-hi:     #D8E2DB;
+  --bar:        #1E2B26;
+  --banner:     #221E10;
+  --banner-edge:#4E4425;
 }
 
 html { transition: background-color 200ms ease; }
