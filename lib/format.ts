@@ -54,13 +54,15 @@ export function clockTime(ts: number) {
   return new Date(ts).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
 
-// How deep the admin ladder can reasonably go for a given accuracy.
+// How deep the admin ladder can reasonably go for a given accuracy. Weak fixes
+// are truncated so we don't claim a precise level we can't support; a good fix
+// shows every level the geocoder returned.
 export function depthForAccuracy(accuracy: number) {
   if (accuracy > 2000) return 2;
   if (accuracy > 500) return 3;
   if (accuracy > 150) return 4;
   if (accuracy > LOW_ACCURACY_M) return 5;
-  return 8;
+  return Infinity;
 }
 
 export function shareText(fix: Fix, fmt: CoordFormat) {
