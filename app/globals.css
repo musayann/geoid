@@ -97,7 +97,7 @@ a:hover { color: var(--link-hi); text-decoration: underline; }
 /* --- the single card -------------------------------------- */
 .card {
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
   background: var(--card);
   overflow: hidden;
   position: relative;
