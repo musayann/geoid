@@ -277,7 +277,7 @@ a:hover { color: var(--link-hi); text-decoration: underline; }
   text-wrap: pretty;
 }
 .message p { font-size: 15px; line-height: 1.6; color: var(--ink-2); margin: 0; text-wrap: pretty; }
-.message .fineprint { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--faint); text-align: center; }
+.fineprint { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--faint); text-align: center; }
 
 /* --- low-accuracy note ------------------------------------ */
 .note {

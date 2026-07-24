@@ -107,19 +107,26 @@ export default function WhereAmI() {
   const onPosition = useCallback(
     async (pos: GeolocationPosition) => {
       const c = pos.coords;
+      // A real GPS altitude always comes with a finite altitudeAccuracy. Some
+      // devices/browsers report altitude: 0 (not null) when they have no vertical
+      // fix — trusting that would show a bogus "0 m" and skip the terrain fallback.
+      const gpsAlt =
+        Number.isFinite(c.altitude) && Number.isFinite(c.altitudeAccuracy)
+          ? (c.altitude as number)
+          : null;
       const fix: Fix = {
         lat: c.latitude,
         lon: c.longitude,
         accuracy: c.accuracy,
-        altitude: Number.isFinite(c.altitude) ? (c.altitude as number) : null,
-        altSource: Number.isFinite(c.altitude) ? 'GPS' : null,
+        altitude: gpsAlt,
+        altSource: gpsAlt != null ? 'GPS' : null,
         place: null,
         updatedAt: Date.now(),
       };
 
-      // Show coordinates immediately; enrich with names/elevation as they arrive.
-      setState({ phase: 'live', fix, cached: false, error: '' });
-
+      // Stay on the "Finding you…" acquiring screen until the address (and
+      // elevation) resolve, so the live card appears once, fully populated —
+      // no flicker from coordinates landing before the place name.
       const token = acquireToken.current;
       const [place, elevation] = await Promise.all([
         reverseGeocode(fix.lat, fix.lon).catch(() => null),
@@ -135,7 +142,7 @@ export default function WhereAmI() {
         enriched.altSource = 'terrain model';
       }
       saveStored(enriched);
-      setState({ fix: enriched });
+      setState({ phase: 'live', fix: enriched, cached: false, error: '' });
     },
     [setState],
   );
@@ -199,9 +206,6 @@ export default function WhereAmI() {
   /* ---- lifecycle ------------------------------------------ */
   useEffect(() => {
     acquire();
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -369,9 +373,7 @@ export default function WhereAmI() {
                 <i style={{ width: '63%' }} />
               </div>
             </div>
-            <div className="message">
-              <div className="fineprint">Usually takes a few seconds outdoors</div>
-            </div>
+            <div className="fineprint">Usually takes a few seconds outdoors</div>
           </div>
         </main>
         <Toast msg={toast} />

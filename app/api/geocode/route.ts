@@ -22,7 +22,7 @@ export async function GET(request: Request) {
   try {
     const res = await fetch(url, {
       headers: {
-        'User-Agent': 'geoid/1.0 (Where Am I — https://github.com/)',
+        'User-Agent': 'geoid/1.0 (Where Am I - https://github.com/)',
         Accept: 'application/json',
       },
       next: { revalidate: 86400 }, // addresses are stable; cache a day

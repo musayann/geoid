@@ -5,9 +5,6 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Where Am I',
   description: 'One glanceable card that tells you exactly where you are.',
-  manifest: '/manifest.webmanifest',
-  applicationName: 'Where Am I',
-  appleWebApp: { capable: true, title: 'Where Am I', statusBarStyle: 'default' },
 };
 
 export const viewport: Viewport = {
